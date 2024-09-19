@@ -1,26 +1,23 @@
-// frontend/src/App.js
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import logo from './ideagoLogo.webp';
+import './App.css';
 
 function App() {
-  const [orders, setOrders] = useState([]);
-
-  useEffect(() => {
-    const fetchOrders = async () => {
-      const response = await axios.get('http://localhost:5000/api/orders');
-      setOrders(response.data);
-    };
-    fetchOrders();
-  }, []);
-
   return (
-    <div>
-      <h1>Orders</h1>
-      <ul>
-        {orders.map(order => (
-          <li key={order.id}>{order.name}</li>
-        ))}
-      </ul>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          African's Future
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
